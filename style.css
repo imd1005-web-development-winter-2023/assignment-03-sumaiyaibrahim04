@@ -1,46 +1,284 @@
 /*
-  CSS File
+  CSS FILE
 */
 
 /*
  VARIABLES
 */
 :root {
-  /* Core colours */
-  /* https://coolors.co/palette/e63946-f1faee-a8dadc-457b9d-1d3557 */
-  --colour-amaranth: #e63946;
-  --colour-peppermint: #f1faee;
-  --colour-aquaisland: #a8dadc;
-  --colour-wedgewood: #457b9d;
-  --colour-cello: #1d3557;
+  /*
+    Core colours
+    https://coolors.co/palette/f4f1de-e07a5f-3d405b-81b29a-f2cc8f
+  */
 
-  /* Header configuration */
-  --header-heading-colour: var(--colour-peppermint);
+  
+  --colour-purple: #a162f7;
+  --colour-purplish-blue: #7089fc;
+  --colour-icy-blue: #45e3ff;
+  --colour-navy-blue: #2b3950;
+  --colour-white: #fffff1;
+  
+
 
   /* Body configuration */
-  --body-default-colour: var(--colour-cello);
-  --body-background-colour: var(--colour-peppermint);
+  --body-default-colour: var(--colour-navy-blue);
+  --body-background-colour: var(--colour-navy-blue);
 }
 
 /*
-  PAGE / BODY
+ UTILITIES
 */
+.container {
+  max-width: 100%;
+  margin: 0px auto;
+  padding:  1rem;
+  transform: rotate(0deg);
+}
+
+.container-list {
+  max-width: 100%;/*responsive*/
+  margin: 0px auto;
+  padding:  1rem;
+  transform: rotate(0deg);
+}
+
+.container h1{
+  padding-top: 1rem;
+ color: #fffff1;
+  
+}
+
+.container2{
+  max-width: 100%;
+  margin: 0px auto;
+  padding:  1rem;
+  transform: rotate(0deg);
+  
+}
+
+
+.container heading {
+  /*box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;*/
+}
+
+.header{
+  display: flex;
+  justify-content: center;
+  background-color: #fffff1;
+  padding: 5px;
+  
+}
+
+.header--bar--logo{
+  height: 3rem;
+  margin-left: 1rem;
+}
+
+
+/*
+  LIST
+*/
+
+
+ul.todo-list li {
+  width: 100%;
+  padding:18px;
+  margin: 5px 0;
+  background-color: #fffff1;
+  border-radius: 5px;
+  font-size: 22px;
+  list-style: none;
+}
+
+ul.todo-list  {
+
+}
+
+ul.todo-list[type="checkbox"]  {
+
+
+}
+
+
+
+/*
+  FORMS
+*/
+
+
+
+.add-todo-form input[type="text"] {
+  width: 100%;
+  padding:18px;
+  margin: 5px 0;
+  background-color: #fffff1;
+  border-radius: 5px;
+  font-size: 22px;
+  list-style: none;
+  border-style: none;
+}
+
+.add-todo-form input[type="submit"] {
+  margin: 5px 0.5rem;
+  color:#fffff1;
+  font-size:28px;
+  background-color: #45e3ff;
+  padding:18px;
+  border-radius: 5px;
+  border-style: none;
+  cursor: pointer;
+}
+
+.add-todo-form input[type="submit"]:hover {
+  background-color: #3fd2ec;
+}
+
+.add-todo-form{
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-btn{
+
+}
+
+/*
+  BUTTONS
+*/
+
+
+ul.todo-list li button {
+  color: #fffff1;
+  background-color: #7089fc;
+  border-style: none;
+  float:right;
+  padding:5px;
+  width:2rem;
+  height: 2.5rem;
+  font-size:28px;
+  line-height: 16px;
+  margin-right:1px;
+  border:none;
+  outline:none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+ul.todo-list li button:hover {
+
+  color: #fffff1;
+  background-color: #677ee7;
+}
+
+.delete-all{
+  color: #fffff1;
+  background-color: #7089fc;
+  border-style: none;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.delete-all:hover{
+  color: #fffff1;
+  background-color: #677ee7;
+}
+
+/*
+ MAIN
+*/
+
+main h1 {
+  font-size: 2.4rem;
+  text-align: left;
+
+}
+
+main h2 {
+ 
+}
+
+main h3 {
+  font-size: 2.4rem;
+  text-align: left;
+  color: fffff1;
+}
+
+main p {
+ 
+}
+
+/*
+ BODY
+*/
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
   color: var(--body-default-colour);
+  font-family: Arial, Helvetica, sans-serif;
   background-color: var(--body-background-colour);
 }
 
-main {
-  min-height: 100vh;
+.todo-name{
+  color: #2ea44f;
+  background-color: #e07a5f;
+}
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.todo-list{
+  list-style: none;
+  padding-left: 0;
+}
+
+h3{
+color: #fffff1;
+}
+
+.todo--list, .completed{
+margin: 5px 0;
+padding:20px;
+}
+
+ol{
+  list-style: none;
+}
+
+ol li{
+  width: 100%;
+  padding:18px;
+  margin: 5px 0;
+  background-color: #fffff1;
+  border-radius: 5px;
+  font-size: 22px;
+}
+
+ol li::before{
+}
+
+.todo--list li button{
+  float:right;
+  padding:5px;
+  font-size:28px;
+  line-height: 28px;
+  margin-right:15px;
+  background: none;
+  border:none;
+  outline:none;
+  cursor: pointer;
+}
+
+.completed li button{
+  float:right;
+  padding:5px;
+  font-size:28px;
+  line-height: 28px;
+  margin-right:15px;
+  background: none;
+  border:none;
+  outline:none;
+  cursor: pointer;
 }
 
 /*
-  Screen reader text utility class
+ SCREEN READER UTILITY
 */
 .sr-only {
   position: absolute;
