@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-ca">
   <head>
     <!-- Set the page title -->
     <title>Assignment 03</title>
@@ -10,36 +10,107 @@
     <!-- Set the screens default zoom / scale to 1 -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <!-- Specifies the document mode for Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
     <!-- We are using a CSS Reset file to standardize browser default css -->
-    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="./reset.css" />
 
     <!-- This is where all of our awesome CSS code goes -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./styles.css" />
 
     <!-- Set the Favicon  -->
-    <link rel="icon" href="./images/favicon/rocket.svg" type="image/svg+xml" />
+    <link rel="icon" href="rocket.svg" type="image/svg+xml" />
+
+    <!--fontawesome-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   </head>
   <body>
-    <!--
 
-      ADD YOUR ASSIGNMENT 03 CODE
+    <section>
+      <header>
+        <div class="header">
+          <img class="header--bar--logo" src="bravo-logo-dark.png" alt="Bravo logo" />
+        </div>
+      </header>
+    </section>
 
-      YOU MAY REMOVE THE BOILERPLATE CODE BELOW
-
-      IMPORTANT CHECKLIST:
-
-      - Are users able to create and delete to do list items?
-      - Have you set a favicon? (included - but it's a rocket)
-      - Do you have a css reset file? (included)
-      - Has a team member conducted a code review and left a GitHub Issue in your repo?
-      - Have you conducted a code review and left a GitHub Issue on your team member's repo?
-
-    -->
     <main>
-      <div id="app"></div>
-    </main>
+      <div class="container heading">
+        <h1>My To Do List</h1>
+      </div>
 
-    <!-- This is where we add our awesome JavaScript code -->
+      <section>
+        <div class="container2">
+          <!--<h3>Welcome!</h3>-->
+        <form class="add-todo-form">
+          <input
+            type="text"
+            name="item"
+            id="todo-name"
+            placeholder="Enter a new task"
+            required
+          />
+          <input type="submit" value="+" class="add-btn"/>
+        </form>
+      </div>
+      </section>
+
+ 
+
+      <section>
+        <div class="container-list">
+         <!-- <p>Welcome!</p>-->
+
+          <!--<form class="add-todo-form">
+            <input
+              type="text"
+              name="item"
+              id="todo-name"
+              placeholder="Do something cool"
+              required
+            />
+            <input type="submit" value="+" />
+          </form>-->
+
+
+
+          <ul class="todo-list">
+            <li>
+              <label>
+              You haven't entered a new task yet
+            </label>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <button class="delete-all">CLEAR LIST</button>
+        </div>
+      </section>
+
+      <!--<ol class="todo--list">
+        <h3>To Do List</h3>
+        <li>Task
+          <button><i class="fa fa-times"></i></button>
+          <button><i class="fa  fa-check-square-o"></i></button>
+        </li>
+      </ol>
+
+      <ol class="completed">
+        <h3>Completed</h3>
+        <li>Task
+          <button><i class="fa fa-times"></i></button>
+          <button><i class="fa  fa-check-square-o"></i></button>
+        </li>
+      </ol>
+      </div>-->
+
+    </main>
     <script src="./main.js"></script>
   </body>
 </html>
