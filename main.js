@@ -1,44 +1,85 @@
-//
-//  JS File
-//  You may remove the code below - it's just boilerplate
-//
+const todos = [];
 
-//
-// Variables
-//
+let checkBox = document.createElement('input');
 
-// Constants
-const appID = "app";
-const headingText = "To do. To done. ✅";
 
-// Variables
+const todoList = document.querySelector(".todo-list");
+const form = document.querySelector(".add-todo-form");
+const toDoInputBox = document.querySelector("#todo-name");
+const deleteAllButton = document.querySelector(".delete-all");
 
-// DOM Elements
-let appContainer = document.getElementById(appID);
+todoList.classList.add("className");
 
-//
-// Functions
-//
+console.log(todoList);
 
-// Add a heading to the app container
-function inititialise() {
-  // If anything is wrong with the app container then end
-  if (!appContainer) {
-    console.error("Error: Could not find app contianer");
+function renderToDoList() {
+  // Clear all of the entries in the list
+  while (todoList.firstChild) {
+    todoList.removeChild(todoList.firstChild);
+  }
+
+  for (let i = 0; i < todos.length; i++) {
+    const todoListItem = document.createElement("li");
+    
+    todoListItem.textContent = todos[i].text+" " ;
+    /*const todoListCheck = document.createElement("button");
+    todoListCheck.textContent = "v";*/
+
+    const todoListButton = document.createElement("button");
+    todoListButton.textContent = "x";
+
+    todoListButton.dataset.index = i;
+
+    todoListItem.appendChild(todoListButton);
+
+    todoList.appendChild(todoListItem);
+  }
+}
+
+function addTodoItem(event) {
+  event.preventDefault();
+
+  const newTodo = toDoInputBox.value;
+
+  todos.push({
+    text: newTodo,
+    isDone: false,
+  });
+
+  console.log("I AM A FUNCTION", newTodo);
+
+  console.log(todos);
+
+  renderToDoList();
+}
+
+function handleButtonClickInsideUl(event) {
+  if (event.target.nodeName !== "BUTTON") {
     return;
   }
 
-  // Create an h1 and add it to our app
-  const h1 = document.createElement("h1");
-  h1.innerText = headingText;
-  appContainer.appendChild(h1);
+  todoArrayIndexToDelete = event.target.dataset.index;
 
-  // Init complete
-  console.log("App successfully initialised");
+  todos.splice(todoArrayIndexToDelete, 1);
+
+  console.log(todos);
+
+  renderToDoList();
 }
 
-//
-// Inits & Event Listeners
-//
+form.addEventListener("submit", addTodoItem);
+todoList.addEventListener("click", handleButtonClickInsideUl);
 
-inititialise();
+renderToDoList();
+
+function deleteAllTodos(event) {
+  todos.length = 0;
+
+  renderToDoList();
+}
+
+/*if (todos.length==0){
+  ul.innerHTML = ''
+}*/
+
+deleteAllButton.addEventListener("click", deleteAllTodos);
