@@ -1,55 +1,190 @@
-/*
-  CSS File
-*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
 /*
- VARIABLES
+--colour-purple: #a162f7;
+  --colour-purplish-blue: #7089fc;
+  --colour-icy-blue: #45e3ff;
+  --colour-navy-blue: #2b3950;
+  --colour-white: #fffff1;
 */
-:root {
-  /* Core colours */
-  /* https://coolors.co/palette/e63946-f1faee-a8dadc-457b9d-1d3557 */
-  --colour-amaranth: #e63946;
-  --colour-peppermint: #f1faee;
-  --colour-aquaisland: #a8dadc;
-  --colour-wedgewood: #457b9d;
-  --colour-cello: #1d3557;
-
-  /* Header configuration */
-  --header-heading-colour: var(--colour-peppermint);
-
-  /* Body configuration */
-  --body-default-colour: var(--colour-cello);
-  --body-background-colour: var(--colour-peppermint);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
-
-/*
-  PAGE / BODY
-*/
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--body-default-colour);
-  background-color: var(--body-background-colour);
+  background-color: #fffff1;
 }
 
-main {
-  min-height: 100vh;
+/* For Scrollbar */
 
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f2f2f2;
+  border-radius: 8px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: #a162f7;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #8952d5;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    background-color: #fffff1;
+    padding: 1rem;
+    
+  }
+  
+  .header--bar--logo{
+    height: 3rem;
+  }
+  
+.container {
+  position: relative;
+  max-width: 480px;
+  width: 100%;
+  border-radius: 8px;
+  padding: 25px;
+  margin: 50px auto 0;
+  background-color: #2b3950;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.container .input-field {
+  position: relative;
+  height: 64px;
+  width: 100%;
+}
+.input-field textarea {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 8px;
+  padding: 18px 45px 18px 15px;
+  background-color: #fffff1;
+  resize: none;
+}
+.input-field textarea:focus {
+  border-color: #4070f4;
+}
+textarea::-webkit-scrollbar {
+  display: none;
+}
+/*.input-field .note-icon {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 24px;
+  color: #707070;
+}*/
+.input-field textarea:focus ~ .note-icon {
+  color: #4070f4;
+}
+.container .todoLists {
+  max-height: 380px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+.todoLists .list {
   display: flex;
-  justify-content: center;
   align-items: center;
+  list-style: none;
+  background-color: #fffff1;
+  padding: 20px 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+  position: relative;
+  cursor: pointer;
+}
+.todoLists .list input {
+  height: 16px;
+  min-width: 16px;
+  accent-color:#a162f7;
+  pointer-events: none;
+}
+.todoLists .list .task {
+  margin: 0 30px 0 15px;
+  word-break: break-all;
+}
+.list input:checked ~ .task {
+  text-decoration: line-through;
+}
+
+.todoLists .list i {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #707070;
+  padding: 5px;
+  opacity: 0.6;
+  display: none;
+}
+.todoLists .list:hover i {
+  display: inline-flex;
+}
+.todoLists .list i {
+    color:#7089fc;
+  }
+.todoLists .list i:hover {
+  opacity: 1;
+}
+.container .pending-tasks {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+.pending-tasks span {
+  color: #fffff1;
+}
+.pending-tasks .clear-button {
+  padding: 6px 12px;
+  outline: none;
+  border: none;
+  background: #7089fc;
+  color: #fffff1;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.clear-button:hover {
+  background-color: #5c72d3;
+}
+@media screen and (max-width: 350px) {
+  .container {
+    padding: 25px 10px;
+  }
 }
 
 /*
-  Screen reader text utility class
+ SCREEN READER UTILITY
 */
 .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
